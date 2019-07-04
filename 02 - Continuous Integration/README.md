@@ -104,7 +104,7 @@ git push origin 18.8.0
 git branch -av
 ```
 
-### (5) Submodules
+### (6) Submodules
 ```
 #!/bin/bash
 
@@ -123,7 +123,7 @@ git add .
 git commit -m"pure-css submodule"
 ```
 
-### (6) Merge
+### (7) Merge
 ```
 #!/bin/bash
 
@@ -144,9 +144,230 @@ git log --graph
 git push origin master
 ```
 
-### (6) Remotes
+### (8) Remotes
 ```
 #!/bin/bash
 
 git remote -v
 ```
+
+### (9) Stash
+```
+#!/bin/bash
+
+# change working directory
+touch file2stash-index
+git add .
+
+touch file2stash-workdir
+
+git status
+
+# stach changes
+git stash save -u
+git stash list
+
+# switch to another branch
+git checkout submodule
+git stash pop
+git add .
+git commit -m"commit stashed changes"
+```
+
+### (10) Stash
+```
+#!/bin/bash
+
+#
+git checkout master
+
+#
+git checkout -b feature
+
+# create file 1.txt
+touch 1.txt
+git add .
+git commit -m"1.txt"
+
+# create file 2.txt
+touch 2.txt
+git add .
+git commit -m"2.txt"
+
+# create file 3.txt
+touch 3.txt
+git add .
+git commit -m"3.txt"
+
+git log -4
+# copy commit hash for "2.txt" <commit-hash>
+
+git checkout master
+ls -la
+git cherry-pick <commit-hash>
+```
+
+### (11) Rebase
+```
+#!/bin/bash
+
+# create new branch
+git checkout -b b2r
+
+# make changes inside b2r branch
+touch b2r
+git add .
+git commit -m"b2r commit"
+
+# switch to master and make changes there
+git checkout master
+touch b2r.master
+git add .
+git commit -m"b2r commit in master"
+
+# rebase
+git checkout b2r
+git rebase master
+
+git checkout master
+git merge b2r
+```
+
+### (12) Subtree
+```
+#!/bin/bash
+
+# add project remote
+git remote add pure-css-upstream https://github.com/pure-css/pure.git
+
+git remote -v
+
+git subtree add --prefix pure-css-subtree pure-css-upstream master --squash
+git branch -av
+git subtree pull --prefix pure-css-subtree pure-css-upstream master --squash
+
+## edit README.md
+#git subtree push --prefix pure-css-subtree pure-css-upstream master
+```
+
+### (13) Revert
+```
+#!/bin/bash
+
+# create and modify additional branch
+git checkout -b b2revert
+touch revert.txt
+git add .
+git commit -m"revert.txt"
+
+# modify master branch
+git checkout master
+touch master.txt
+git add .
+git commit -m"master.txt"
+
+# merge
+git merge b2revert
+
+# exit :wq
+git log --graph -4
+
+# revert merge commit
+git revert HEAD
+#error: commit <SHA1> is a merge but no -m option was given.
+
+# revert with parent from master
+git revert HEAD -m 1
+git log --graph -4
+
+# revert revert
+git revert HEAD
+git log --graph -4
+```
+
+### (14) Reset
+```
+#!/bin/bash
+
+# mixed
+# remove from index
+touch file2reset.txt
+git status
+git add .
+git status
+git reset HEAD -- .
+git status
+
+# soft
+git add .
+git commit -m"file2reset"
+git reset --soft HEAD^1
+git status
+
+# hard
+git reset --hard HEAD^1
+git status
+
+# ^ vs ~
+# http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde
+```
+
+### (15) Tags
+```
+#!/bin/bash
+
+# create annotated tag
+git tag -a v19.8.0 -m "my-project 19.8.0 GA"
+git show v19.8.0
+
+# tag old commit
+git checkout -b rc1 HEAD~2
+git tag -a v19.8.0-rc1 -m "19.8.0-rc1"
+
+git checkout master
+git branch -d rc1
+git tag
+
+# share tags
+git push origin v19.8.0
+
+# fetch
+git fetch origin --tags
+
+# checkout tags
+git checkout v19.8.0-rc1
+git checkout -b rc1
+
+# delete
+git tag -d v19.8.0-rc1
+git tag --list
+```
+
+### (16) Hooks
+
+### (17) Refspecs
+
+### (18) Squash
+
+### (19) Orphan
+```
+#!/bin/bash
+
+# create orphan branch
+git checkout --orphan orphan_branch
+git rm -rf .
+
+echo "#Title of Orphan branch" > README.md
+git add .
+git commit -a -m "Initial Commit"
+
+git log
+git branch -av
+```
+
+### (20) Detached-head
+
+### (21) Git log
+
+
+
