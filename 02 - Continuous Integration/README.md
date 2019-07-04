@@ -143,3 +143,10 @@ git log --graph
 # Publish changes
 git push origin master
 ```
+
+### (6) Remotes
+```
+#!/bin/bash
+
+git remote -v
+```
