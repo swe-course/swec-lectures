@@ -245,11 +245,7 @@ git add .
 git commit -m"b2r commit in master"
 
 # rebase
-git checkout b2r
-git rebase master
-
-git checkout master
-git merge b2r
+git rebase b2r
 ```
 
 ### (12) Subtree
