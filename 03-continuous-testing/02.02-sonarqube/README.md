@@ -9,6 +9,6 @@
 * Login using credentials user/pass **admin/admin**
 * Skip tutorial
 * Install "Github" plugin and restart Sonar, using hint at the top of the page
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/sonar-github.png)
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/sonar-01.png)
 * Generate access token
   ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/sonar-token.png)
