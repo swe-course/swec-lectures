@@ -1,7 +1,11 @@
 ### (1) Configure remote VM as git server
 #### Login into remote VM
 ```
+# if you have no SSH key installed
 ssh root@<git-host-ip-address>
+
+# if you already have SSH key
+ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no root@<git-host-ip-address>
 ```
 #### Configure git user
 ```
