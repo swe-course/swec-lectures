@@ -193,7 +193,7 @@ git add .
 git commit -m"commit stashed changes"
 ```
 
-### (10) Stash
+### (10) Cherry-pick
 ```
 #!/bin/bash
 
