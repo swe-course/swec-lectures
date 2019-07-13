@@ -13,4 +13,6 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/sonar-01.png)
 
 * Generate access token
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/sonar-token.png)
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/sonar-02.png)
+
+* Save token for future use
