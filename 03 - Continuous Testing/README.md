@@ -2,7 +2,7 @@
 ## SonarQube
 * Up SonarQube instance
   ```
-  > cd ~/projects/swec-content/sonarqube
+  > cd ~/projects/swe-course/swec-lectures
   > ./sonarqube-up.sh -d
   ```
 * Access point **http://\<host-ip-address\>:9000**, user/pass **admin/admin**
