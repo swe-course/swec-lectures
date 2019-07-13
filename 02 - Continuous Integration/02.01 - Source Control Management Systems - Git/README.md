@@ -116,8 +116,11 @@ git branch -av
 git checkout 19.8.0
 git push origin 19.8.0
 
-# View one more remote branch
+# Dislay one more remote branch
 git branch -av
+
+# Display bracnhes on origin remote
+git ls-remote origin
 ```
 
 ### (6) Submodules
