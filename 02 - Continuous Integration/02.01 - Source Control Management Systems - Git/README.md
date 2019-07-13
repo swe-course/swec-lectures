@@ -42,6 +42,9 @@ cat config
 
 # Copy public key to the remote VM
 ssh-copy-id -i ~/.ssh/swec git@<git-host-ip-address>
+
+# Test SSH connection
+ssh -T git@<git-host-ip-address>
 ```
 
 ### (3) Create bare repository
@@ -71,6 +74,12 @@ ls -la
 
 # Go to home folder
 cd ~
+
+# Create project's home
+mkdir projects
+cd projects
+
+# Clone repository
 git clone git@<git-host-ip-address>:/opt/git/swec.git
 cd swec
 git config --local user.name "your name"
