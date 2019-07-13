@@ -36,6 +36,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@domain.com" -f ~/.ssh/swec
 # Add SSH config file on local machine, use your remote VM ip address as host-ip-address
 echo "Host <git-host-ip-address>" > config
 echo "  IdentityFile ~/.ssh/swec" >> config
+cat config
 
 # Copy public key to the remote VM
 ssh-copy-id -i ~/.ssh/swec git@<git-host-ip-address>
