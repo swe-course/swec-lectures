@@ -18,6 +18,8 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-02.png)
 * Configure "SonarQube servers" instance, goto **Manage Jenkins/Configure System**, use **SonarQube** as server name 
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-03.png)
+* Create Github access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for Github
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-04.png)
 
 * "GitHub" instance + Github access credentials using created token
   ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-github.png)
