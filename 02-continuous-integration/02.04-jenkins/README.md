@@ -29,6 +29,7 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-07.png)
 
 
+### Troubleshooting
 * Apply fix(es) for **"ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?"**
   * Check your Java version 
     ```bash
