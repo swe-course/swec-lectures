@@ -13,10 +13,10 @@
   ./install-plugins.sh <jenkins-password>
   ```
 ### Configure plugins
-Goto Manage **Manage Jenkins/Configure System**
+
 * Create SonarQube access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for SonarQube
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-02.png)
-* Configure "SonarQube servers" instance, using **SonarQube** as server name 
+* Configure "SonarQube servers" instance, goto **Manage Jenkins/Configure System**, use **SonarQube** as server name 
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-03.png)
 
 * "GitHub" instance + Github access credentials using created token
