@@ -16,9 +16,9 @@
 Goto Manage **Manage Jenkins/Configure System**
 * Create SonarQube access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for SonarQube
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-02.png)
+* Configure "SonarQube servers" instance, using **SonarQube** as server name 
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-03.png)
 
-* Configure "SonarQube servers" instance, name **SonarQube**
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-sonar.png)
 * "GitHub" instance + Github access credentials using created token
   ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-github.png)
 * "GitHub Pull Request Builder"
