@@ -2,7 +2,7 @@
 ## Nexus
 * Up Nexus instance
   ```
-  > cd ~/projects/swec-content/nexus
+  > cd ~/projects/swe-course/swec-lectures/07-continuous-delivery/07.01-artifacts-repository/nexus
   > ./nexus-up.sh -d
   ```
 * Access point **http://\<host-ip-address\>:8081/nexus**, user/pass **admin/admin123**
