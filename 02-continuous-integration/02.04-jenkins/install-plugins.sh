@@ -10,7 +10,7 @@ for plugin in "${plugins[@]}"
 do
   echo ---- Installing ${plugin} ----
   curl -s -o /dev/null -w "%{http_code}" POST \
-    --user admin:admin \
+    --user admin:${1} \
     -H "${crumb}" \
     --data "<jenkins><install plugin='${plugin}@latest'/></jenkins>" \
     --header 'Content-Type: text/xml' \
