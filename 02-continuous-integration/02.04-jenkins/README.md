@@ -20,14 +20,10 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-03.png)
 * Create Github access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for Github
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-04.png)
-
-* Configure "GitHub" instance
+* Configure "GitHub" instance, goto **Manage Jenkins/Configure System**, use **Github** as instance name
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-05.png)
-
-
-
-* "GitHub Pull Request Builder"
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-ghprb.png)
+* Configure "GitHub Pull Request Builder", goto **Manage Jenkins/Configure System**
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-06.png)
 
 ### Configure tools
 Goto Manage **Manage Jenkins/Global Tool Configuration**
