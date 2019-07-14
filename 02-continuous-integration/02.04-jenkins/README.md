@@ -9,7 +9,7 @@
 * Install additional plugins
   ```
   cd ~/projects/swe-course/swec-lectures/02-continuous-integration/02.04-jenkins
-  ./install-plugins.sh <password>
+  ./install-plugins.sh <jenkins-password>
   ```
 
 * Apply fix(es) for **"ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?"**
