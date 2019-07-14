@@ -5,7 +5,7 @@
   ```
 ### Complete setup
 * Open page in browser **http://\<host-ip-address\>:8080**
-* Complete instalation, using provided instructions (Install suggested plugins, use new password)
+* Complete installation, using provided instructions (Install suggested plugins, use new password)
 ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-01.png)
 * Install additional plugins
   ```
