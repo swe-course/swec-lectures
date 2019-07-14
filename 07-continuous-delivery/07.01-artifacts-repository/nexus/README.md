@@ -8,4 +8,4 @@
 * Open page in browser **http://\<host-ip-address\>:8081/nexus**
 * Login using credentials **user** - **admin**, **password** can be found here ```cat /opt/nexus/nexus-data/admin.password```
 * Create new maven2 **mixed** type repository, using **dbox** as a name
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/nexus-maven-repo.png)
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/nexus-01.png)
