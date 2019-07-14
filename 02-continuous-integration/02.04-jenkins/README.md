@@ -13,7 +13,6 @@
   ./install-plugins.sh <jenkins-password>
   ```
 ### Configure plugins
-
 * Create SonarQube access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for SonarQube
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-02.png)
 * Configure "SonarQube servers" instance, goto **Manage Jenkins/Configure System**, use **SonarQube** as server name 
@@ -26,9 +25,8 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-06.png)
 
 ### Configure tools
-Goto Manage **Manage Jenkins/Global Tool Configuration**
-* Configure "SonarQube Scanner", name - **SonarQube Scanner**
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-tools-sonar-scanner.png)
+* Configure "SonarQube Scanner", goto **Manage Jenkins/Global Tool Configuration** and use **SonarQubeScanner** as tool name
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-07.png)
 
 
 * Apply fix(es) for **"ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?"**
