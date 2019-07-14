@@ -21,8 +21,11 @@
 * Create Github access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for Github
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-04.png)
 
-* "GitHub" instance + Github access credentials using created token
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-github.png)
+* Configure "GitHub" instance
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-05.png)
+
+
+
 * "GitHub Pull Request Builder"
   ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-ghprb.png)
 
