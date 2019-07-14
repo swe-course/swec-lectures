@@ -1,8 +1,9 @@
 ## Jenkins
-* Install
+### Install
   ```
   tln install default-jre:jenkins
   ```
+### Complete setup
 * Open page in browser **http://\<host-ip-address\>:8080**
 * Complete instalation, using provided instructions (Install suggested plugins, use new password)
 ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-01.png)
@@ -11,6 +12,20 @@
   cd ~/projects/swe-course/swec-lectures/02-continuous-integration/02.04-jenkins
   ./install-plugins.sh <jenkins-password>
   ```
+### Configure plugins
+Goto Manage **Manage Jenkins/Configure System**
+* Configure "SonarQube servers" instance, name **SonarQube**
+  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-sonar.png)
+* "GitHub" instance + Github access credentials using created token
+  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-github.png)
+* "GitHub Pull Request Builder"
+  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-ghprb.png)
+
+### Configure tools
+Goto Manage **Manage Jenkins/Global Tool Configuration**
+* Configure "SonarQube Scanner", name - **SonarQube Scanner**
+  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-tools-sonar-scanner.png)
+
 
 * Apply fix(es) for **"ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?"**
   * Check your Java version 
@@ -65,16 +80,4 @@
     ```
 
 
-### Configure plugins
-Goto Manage **Manage Jenkins/Configure System**
-* Configure "SonarQube servers" instance, name **SonarQube**
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-sonar.png)
-* "GitHub" instance + Github access credentials using created token
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-github.png)
-* "GitHub Pull Request Builder"
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-ghprb.png)
 
-### Configure tools
-Goto Manage **Manage Jenkins/Global Tool Configuration**
-* Configure "SonarQube Scanner", name - **SonarQube Scanner**
-  ![](https://raw.githubusercontent.com/swe-course/swec-content/master/imgs/jenkins-tools-sonar-scanner.png)
