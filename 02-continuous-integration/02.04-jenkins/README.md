@@ -1,9 +1,16 @@
 ## Jenkins
 * Install
   ```
-  > tln install jenkins
+  tln install default-jdk:jenkins
   ```
-* Access point **http://\<host-ip-address\>:8080**
+* Open page in browser **http://\<host-ip-address\>:8080**
+* Complete instalation, using provided instructions (Install suggested plugins)
+* Install additional plugins
+  ```
+  cd ~/projects/swe-course/swec-lectures/02-continuous-integration/02.04-jenkins
+  ./install-plugins.sh
+  ```
+
 * Apply fix(es) for **"ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?"**
   * Check your Java version 
     ```bash
@@ -55,11 +62,7 @@
     ```
     systemctl stop jenkins && systemctl start jenkins
     ```
-* Install plugins
-  ```
-  > cd ~/projects/swec-content/jenkins
-  > ./install-plugins.sh
-  ```
+
 
 ### Configure plugins
 Goto Manage **Manage Jenkins/Configure System**
