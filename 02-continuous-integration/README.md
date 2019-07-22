@@ -7,3 +7,12 @@
   ```
   tln install docker:docker-compose
   ```
+ * Clone repository with lectures
+  ```
+  cd ~
+  mkdir projects
+  cd projects
+  mkdir swe-course
+  cd swe-course
+  git clone 
+  ```
