@@ -25,7 +25,7 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-06.png)
 
 ### Configure tools
-* Configure "SonarQube Scanner", goto **Manage Jenkins/Global Tool Configuration** and use **SonarQubeScanner** as tool name
+* Configure "SonarQubeScanner", goto **Manage Jenkins/Global Tool Configuration** and use **SonarQubeScanner** as tool name
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-07.png)
 
 
