@@ -2,7 +2,7 @@
 ## SonarQube
 * Up SonarQube instance
   ```
-  cd ~/projects/swe-course/swec-lectures/03-continuous-testing/02.02-sonarqube
+  cd ~/projects/swe-course/swec-lectures/03-continuous-testing/03.02-sonarqube
   ./sonarqube-up.sh -d
   ```
 * Open page in browser **http://\<host-ip-address\>:9000**
