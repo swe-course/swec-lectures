@@ -5,7 +5,8 @@
 * Install helper - [talan cli](https://github.com/project-talan/tln-cli)
 * Install docker
   ```
-  tln install docker:docker-compose
+  tln install-latest docker
+  tln install docker-compose
   ```
  * Clone repository with lectures
   ```
