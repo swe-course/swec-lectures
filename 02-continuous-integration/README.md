@@ -1,3 +1,5 @@
+# Environment for Continues Integration
 
-Allocate VM to install & configure Jenkins, Sonar, Nexus
-Install Nodejs & tln-cli
+## Prerequisites
+* Allocate Ubuntu VM (18.04)
+* Install helper - [talan cli](https://github.com/project-talan/tln-cli)
