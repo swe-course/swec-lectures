@@ -32,6 +32,9 @@
 * Fork application template from parent project ```https://github.com/swe-course/swec-template```
 * Create new pipeline, using **swec-template** as name and your fork as Github project
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-08.png)
+* Configure "GitHub Pull Request Builder"
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-09.png)
+
 
 
 ### Troubleshooting
