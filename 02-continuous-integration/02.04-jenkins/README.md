@@ -51,6 +51,7 @@
 
 ## Gonfigure branch(es)
 * Mark master branch as protected at Github repository **Settings**
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/github-02.png)
 
 ----
 
