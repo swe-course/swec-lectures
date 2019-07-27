@@ -28,6 +28,11 @@
 * Configure "SonarQubeScanner", goto **Manage Jenkins/Global Tool Configuration** and use **SonarQubeScanner** as tool name
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-07.png)
 
+### Configure new Jenkins job
+* Fork application template from parent project ```https://github.com/swe-course/swec-template```
+* Create new pipeline, using **swec-template** as name and your fork as Github project
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-08.png)
+
 
 ### Troubleshooting
 * Apply fix(es) for **"ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?"**
