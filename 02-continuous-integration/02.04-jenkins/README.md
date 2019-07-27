@@ -49,7 +49,10 @@
     ```
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-10.png)
 
+## Gonfigure branch(es)
+* Mark master branch as protected at Github repository **Settings**
 
+----
 
 ### Troubleshooting
 * Apply fix(es) for **"ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?"**
