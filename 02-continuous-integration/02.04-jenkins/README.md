@@ -34,6 +34,20 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-08.png)
 * Configure "GitHub Pull Request Builder"
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-09.png)
+* Chech "GitHub hook trigger for GITScm polling" switch
+* Configure pipeline
+  * Select **Pipeline script from SCM**
+  * Select SCM **Git**
+  * Set repository url, it should point to your fork
+  * Use git repo Refspec (**Advanced** button):
+    ```
+    +refs/heads/*:refs/remotes/origin/* +refs/pull/*:refs/remotes/origin/pr/*
+     ```
+  * Add additional branch
+    ```
+    ${sha1}
+    ```
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-10.png)
 
 
 
