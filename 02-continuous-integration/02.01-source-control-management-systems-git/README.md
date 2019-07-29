@@ -174,7 +174,7 @@ git remote -v
 ```
 #!/bin/bash
 
-# change working directory
+# add new file into git index
 touch file2stash-index
 git add .
 
