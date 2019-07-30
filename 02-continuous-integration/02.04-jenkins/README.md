@@ -35,9 +35,7 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-08.png)
 * Add next set of job parameters
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-11.png)
-  
-* Configure "GitHub Pull Request Builder"
-  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-09.png)
+
   | Parameter name | Value |
   | --- | --- |
   | SONARQUBE_SERVER | **SonarQube** |
@@ -48,7 +46,9 @@
   | NEXUS_REPO | **saas-template** |
   | NEXUS_USER | **admin** |
   | NEXUS_PASS | <nexus-password> |
-  
+
+* Configure "GitHub Pull Request Builder"
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-09.png)
 * Chech "GitHub hook trigger for GITScm polling" switch
 * Configure pipeline
   * Select **Pipeline script from SCM**
