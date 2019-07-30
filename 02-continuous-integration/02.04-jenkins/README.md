@@ -40,12 +40,12 @@
   | --- | --- |
   | SONARQUBE_SERVER | **SonarQube** |
   | SONARQUBE_SCANNER | **SonarQubeScanner** |
-  | SONARQUBE_ACCESS_TOKEN | <sonar-access-tocker> |
-  | GITHUB_ACCESS_TOKEN | <github-access-token> |
+  | SONARQUBE_ACCESS_TOKEN | **\<sonar-access-tocker\>** |
+  | GITHUB_ACCESS_TOKEN | **\<github-access-token\>** |
   | NEXUS_HOST | **http://\<host-ip-address\>:8081** |
   | NEXUS_REPO | **saas-template** |
   | NEXUS_USER | **admin** |
-  | NEXUS_PASS | <nexus-password> |
+  | NEXUS_PASS | **\<nexus-password\>** |
 
 * Configure "GitHub Pull Request Builder"
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-09.png)
