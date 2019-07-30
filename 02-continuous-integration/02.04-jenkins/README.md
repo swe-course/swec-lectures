@@ -30,10 +30,25 @@
 
 ### Configure new Jenkins job
 * Fork application template from parent project ```https://github.com/swe-course/swec-template```
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-12.png)  
 * Create new pipeline, using **swec-template** as name and your fork as Github project
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-08.png)
+* Add nexy set of parameters
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-11.png)
+  
 * Configure "GitHub Pull Request Builder"
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-09.png)
+  | Parameter name | Value |
+  | --- | --- |
+  | SONARQUBE_SERVER | **SonarQube** |
+  | SONARQUBE_SCANNER | **SonarQubeScanner** |
+  | SONARQUBE_ACCESS_TOKEN | <sonar-access-tocker> |
+  | GITHUB_ACCESS_TOKEN | <github-access-token> |
+  | NEXUS_HOST | **http://\<host-ip-address\>:8081** |
+  | NEXUS_REPO | **saas-template** |
+  | NEXUS_USER | **admin** |
+  | NEXUS_PASS | <nexus-password> |
+  
 * Chech "GitHub hook trigger for GITScm polling" switch
 * Configure pipeline
   * Select **Pipeline script from SCM**
