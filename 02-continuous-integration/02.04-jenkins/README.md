@@ -43,7 +43,7 @@
   | SONARQUBE_ACCESS_TOKEN | **\<sonar-access-tocker\>** |
   | GITHUB_ACCESS_TOKEN | **\<github-access-token\>** |
   | NEXUS_HOST | **http://\<host-ip-address\>:8081** |
-  | NEXUS_REPO | **saas-template** |
+  | NEXUS_REPO | **swec-template** |
   | NEXUS_USER | **admin** |
   | NEXUS_PASS | **\<nexus-password\>** |
 
