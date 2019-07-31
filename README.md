@@ -8,7 +8,7 @@
   tln install-latest docker
   tln install docker-compose
   ```
- * Clone repository with lectures
+* Clone repository with lectures
   ```
   cd ~
   mkdir projects
