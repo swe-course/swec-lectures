@@ -1,19 +1,19 @@
 # Software Engineering Course
 
-## Prerequisites
+## Prerequisites, CI/CD VM
 * Allocate Ubuntu VM (18.04)
 * Install helper - [talan cli](https://github.com/project-talan/tln-cli)
 * Install docker & docker compose
   ```
-  tln install-default docker
+  tln install-latest docker
   tln install docker-compose
   ```
-
-## Configure workspace 
-* Create project's home
+ * Clone repository with lectures
   ```
   cd ~
   mkdir projects
   cd projects
-  tln init-conf
+  mkdir swe-course
+  cd swe-course
+  git clone https://github.com/swe-course/swec-lectures.git
   ```
