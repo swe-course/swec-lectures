@@ -5,7 +5,8 @@
 * Install helper - [talan cli](https://github.com/project-talan/tln-cli)
 * Install docker & docker compose
   ```
-  tln install docker:docker-compose
+  tln install-default docker
+  tln install docker-compose
   ```
 
 ## Configure workspace 
