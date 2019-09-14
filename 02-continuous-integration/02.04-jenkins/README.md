@@ -1,7 +1,7 @@
 ## Jenkins
 ### Install
   ```
-  tln install default-jre:default-maven:jenkins
+  tln install default-jre:maven:jenkins
   ```
 ### Complete setup
 * Open page in browser **http://\<host-ip-address\>:8080**
