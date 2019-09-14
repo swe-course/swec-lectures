@@ -7,6 +7,16 @@
 * Open page in browser **http://\<host-ip-address\>:8080**
 * Complete installation, using provided instructions (Install suggested plugins, use new password)
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-01.png)
+* Modify JAVA_ARGS in /etc/default/jenkins
+  ```
+  JAVA_ARGS="-Djava.awt.headless=true"
+  to
+  JAVA_ARGS="-Djava.awt.headless=true -Dhudson.DNSMultiCast.disabled=true"
+  ```
+  and restart Jenkins
+  ```
+  service service jenkins restart
+  ```
 * Create access token
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-13.png)
 * Install additional plugins
