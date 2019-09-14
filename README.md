@@ -6,6 +6,8 @@
 * Install docker & docker compose
   ```
   tln install docker:docker-compose
+  docker -v
+  docker-compose -v
   ```
 * Clone repository with lectures
   ```
