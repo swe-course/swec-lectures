@@ -15,6 +15,4 @@
   mkdir projects
   cd projects
   mkdir swe-course
-  cd swe-course
-  git clone https://github.com/swe-course/swec-lectures.git
   ```
