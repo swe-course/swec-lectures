@@ -6,11 +6,12 @@
 ### Complete setup
 * Open page in browser **http://\<host-ip-address\>:8080**
 * Complete installation, using provided instructions (Install suggested plugins, use new password)
-![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-01.png)
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-01.png)
+* Create access token
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-13.png)
 * Install additional plugins
   ```
-  cd ~/projects/swe-course/swec-lectures/02-continuous-integration/02.04-jenkins
-  ./install-plugins.sh <jenkins-password>
+  tln install-plugins jenkins --token <your-token> --plugins "ghprb sonar pipeline-utility-steps http_request pipeline-maven"
   ```
 ### Configure plugins
 * Create SonarQube access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for SonarQube
