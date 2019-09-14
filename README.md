@@ -14,5 +14,6 @@
   cd ~
   mkdir projects
   cd projects
+  tln init-config
   mkdir swe-course
   ```
