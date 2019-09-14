@@ -2,8 +2,7 @@
 ## SonarQube
 * Up SonarQube instance
   ```
-  cd ~/projects/swe-course/swec-lectures/03-continuous-testing/03.02-sonarqube
-  ./sonarqube-up.sh -d
+  tln up sonarqube
   ```
 * Open page in browser **http://\<host-ip-address\>:9000**
 * Login using credentials user/pass **admin/admin**
