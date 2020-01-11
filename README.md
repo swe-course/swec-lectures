@@ -11,6 +11,5 @@
 * Install docker & docker compose
   ```
   tln install docker:docker-compose
-  docker -v
-  docker-compose -v
+  docker -v && docker-compose -v
   ```
