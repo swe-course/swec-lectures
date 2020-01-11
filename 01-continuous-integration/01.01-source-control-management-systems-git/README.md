@@ -132,6 +132,7 @@ git checkout -b submodule
 git submodule add https://github.com/pure-css/pure.git pure-css
 git submodule init
 git submodule update
+cat .gitmodules
 cd pure-css
 git branch
 git branch -av
