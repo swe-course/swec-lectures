@@ -361,7 +361,7 @@ git checkout v20.1.0-rc1
 git checkout -b rc1
 
 # delete
-git tag -d v19.8.0-rc1
+git tag -d v20.1.0-rc1
 git tag --list
 ```
 
