@@ -76,12 +76,10 @@ ls -la
 cd ~
 
 # Create project's home
-mkdir projects
-cd projects
+mkdir projects && cd projects
 
 # Clone repository
-git clone git@<git-host-ip-address>:/opt/git/swec.git
-cd swec
+git clone git@<git-host-ip-address>:/opt/git/swec.git && cd swec
 git config --local user.name "your name"
 git config --local user.email "your email"
 git config --local --list
@@ -101,11 +99,11 @@ git push origin master
 #!/bin/bash
 
 # Create new branch
-git checkout -b 19.8.0
-touch file-19.8.0.txt
+git checkout -b 20.1.0
+touch file-20.1.0.txt
 git add .
 git status
-git commit -m"v19.8.0"
+git commit -m"v20.1.0"
 git checkout master
 
 # Display all branches
@@ -113,8 +111,8 @@ git branch
 git branch -av
 
 # Push branch
-git checkout 19.8.0
-git push origin 19.8.0
+git checkout 20.1.0
+git push origin 20.1.0
 
 # Dislay one more remote branch
 git branch -av
