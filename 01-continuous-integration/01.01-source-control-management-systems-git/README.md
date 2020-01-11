@@ -148,7 +148,7 @@ git commit -m"pure-css submodule"
 git checkout master
 
 # Merge first branch
-git merge 19.8.0
+git merge 20.1.0
 
 # Merge second branch
 git merge submodule
