@@ -370,12 +370,12 @@ git tag --list
 #!/bin/bash
 
 # create orphan branch
-git checkout --orphan orphan_branch
+git checkout --orphan project2
 git rm -rf .
 
-echo "#Title of Orphan branch" > README.md
+echo "#Title of Project2 branch" > README.md
 git add .
-git commit -a -m "Initial Commit"
+git commit -a -m "Initial Commit for Project2"
 
 git log
 git branch -av
