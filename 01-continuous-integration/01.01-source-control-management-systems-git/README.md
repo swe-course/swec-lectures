@@ -225,7 +225,7 @@ ls -la
 git cherry-pick <commit-hash>
 ```
 
-### (11) Rebase
+### (11) Rebase & squash
 ```
 #!/bin/bash
 
@@ -233,9 +233,13 @@ git cherry-pick <commit-hash>
 git checkout -b b2r
 
 # make changes inside b2r branch
-touch b2r
+touch b2r-1
 git add .
-git commit -m"b2r commit"
+git commit -m"b2r-1 commit"
+
+touch b2r-2
+git add .
+git commit -m"b2r-2 commit"
 
 # switch to master and make changes there
 git checkout master
@@ -245,7 +249,7 @@ git commit -m"b2r commit in master"
 
 # rebase
 git checkout b2r
-git rebase master
+git rebase -i master
 
 git checkout master
 git merge b2r
