@@ -334,30 +334,30 @@ git status
 # http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde
 ```
 
-### (15) Tags
+### (15) Tags & detached-head
 ```
 #!/bin/bash
 
 # create annotated tag
-git tag -a v19.8.0 -m "my-project 19.8.0 GA"
-git show v19.8.0
+git tag -a v20.1.0 -m "my-project 20.1.0 GA"
+git show v20.1.0
 
 # tag old commit
 git checkout -b rc1 HEAD~2
-git tag -a v19.8.0-rc1 -m "19.8.0-rc1"
+git tag -a v20.1.0-rc1 -m "20.1.0-rc1"
 
 git checkout master
 git branch -d rc1
 git tag
 
 # share tags
-git push origin v19.8.0
+git push origin v20.1.0
 
 # fetch
 git fetch origin --tags
 
 # checkout tags
-git checkout v19.8.0-rc1
+git checkout v20.1.0-rc1
 git checkout -b rc1
 
 # delete
@@ -365,13 +365,7 @@ git tag -d v19.8.0-rc1
 git tag --list
 ```
 
-### (16) Hooks
-
-### (17) Refspecs
-
-### (18) Squash
-
-### (19) Orphan
+### (16) Orphan
 ```
 #!/bin/bash
 
@@ -387,6 +381,7 @@ git log
 git branch -av
 ```
 
-### (20) Detached-head
+### (17) Hooks
 
-### (21) Git log
+### (18) Refspecs
+
