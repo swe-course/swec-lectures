@@ -19,7 +19,7 @@
   ```
 * Create access token
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-13.png)
-* Install additional plugins
+* Install additional plugins **Installation via API doesn't work at current moment, plugins should be installed manually**
   ```
   tln install-plugins jenkins --token <your-token> --plugins "ghprb sonar pipeline-utility-steps http_request pipeline-maven"
   ```
