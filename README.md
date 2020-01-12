@@ -10,6 +10,5 @@
 * Install NodeJS & helper - [talan cli](https://github.com/project-talan/tln-cli)
 * Install docker & docker compose
   ```
-  tln install docker:docker-compose
-  docker -v && docker-compose -v
+  tln install docker:docker-compose && docker -v && docker-compose -v
   ```
