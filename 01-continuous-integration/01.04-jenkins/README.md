@@ -44,19 +44,6 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-12.png)  
 * Create new pipeline, using **swec-template** as name and your fork as Github project
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-08.png)
-* Add next set of job parameters
-  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-11.png)
-
-  | Parameter name | Value |
-  | --- | --- |
-  | SONARQUBE_SERVER | **SonarQube** |
-  | SONARQUBE_SCANNER | **SonarQubeScanner** |
-  | SONARQUBE_ACCESS_TOKEN | **\<sonar-access-tocker\>** |
-  | GITHUB_ACCESS_TOKEN | **\<github-access-token\>** |
-  | NEXUS_HOST | **http://\<host-ip-address\>:8081** |
-  | NEXUS_REPO | **swec-template** |
-  | NEXUS_USER | **admin** |
-  | NEXUS_PASS | **\<nexus-password\>** |
 
 * Configure "GitHub Pull Request Builder"
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-09.png)
@@ -74,6 +61,19 @@
     ${sha1}
     ```
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-10.png)
+
+* Add environment variables, goto **Manage Jenkins/Configure System**
+  ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-14.png)
+
+  | Parameter name | Value |
+  | --- | --- |
+  | SWEC_SONARQUBE_ACCESS_TOKEN | **\<sonar-access-tocker\>** |
+  | SWEC_GITHUB_ACCESS_TOKEN | **\<github-access-token\>** |
+  | SWEC_NEXUS_HOST | **http://\<host-ip-address\>:8081** |
+  | SWEC_NEXUS_REPO | **swec-template** |
+  | SWEC_NEXUS_USER | **admin** |
+  | SWEC_NEXUS_PASS | **\<nexus-password\>** |
+
 
 ## Gonfigure branch(es)
 * Mark master branch as protected at Github repository **Settings**
