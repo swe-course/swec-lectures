@@ -385,3 +385,5 @@ git branch -av
 
 ### (18) Refspecs
 
+### (19) sparse-checkout
+
