@@ -1,7 +1,7 @@
 # Software Engineering Course
 
 ## Prerequisites, CI/CD VM
-* Allocate Ubuntu VM (18.04)
+* Allocate Ubuntu VM (20.04)
 * Refresh env to the latest packages
   ```
   apt-get update && apt-get upgrade -y
