@@ -27,9 +27,6 @@ ls -la
 ```
 #!/bin/bash
 
-# Go to .ssh folder
-cd ~/.ssh
-
 # Generate pair of SSH keys, use swec as key name, use empty passphrase
 ssh-keygen -t rsa -b 4096 -C "your_email@domain.com" -f ~/.ssh/swec
 
