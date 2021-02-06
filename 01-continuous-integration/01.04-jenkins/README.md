@@ -8,7 +8,6 @@
   > sudo apt update
   > sudo apt install jenkins
   > sudo systemctl start jenkins
-  > 
   ```
 ### Complete setup
 * Open page in browser **http://\<host-ip-address\>:8080**
