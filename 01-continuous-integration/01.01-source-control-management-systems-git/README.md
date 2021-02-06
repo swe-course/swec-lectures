@@ -99,11 +99,11 @@ git push origin master
 #!/bin/bash
 
 # Create new branch
-git checkout -b 20.1.0
-touch file-20.1.0.txt
+git checkout -b 21.2.0
+touch file-21.2.0.txt
 git add .
 git status
-git commit -m"v20.1.0"
+git commit -m"v21.2.0"
 git checkout master
 
 # Display all branches
@@ -111,8 +111,8 @@ git branch
 git branch -av
 
 # Push branch
-git checkout 20.1.0
-git push origin 20.1.0
+git checkout 21.2.0
+git push origin 21.2.0
 
 # Dislay one more remote branch
 git branch -av
@@ -148,7 +148,7 @@ git commit -m"pure-css submodule"
 git checkout master
 
 # Merge first branch
-git merge 20.1.0
+git merge 21.2.0
 
 # Merge second branch
 git merge submodule
@@ -223,6 +223,7 @@ git log -4
 git checkout master
 ls -la
 git cherry-pick <commit-hash>
+ls -la
 ```
 
 ### (11) Rebase & squash
@@ -339,29 +340,29 @@ git status
 #!/bin/bash
 
 # create annotated tag
-git tag -a v20.1.0 -m "my-project 20.1.0 GA"
-git show v20.1.0
+git tag -a v21.2.0 -m "my-project 21.2.0 GA"
+git show v21.2.0
 
 # tag old commit
 git checkout -b rc1 HEAD~2
-git tag -a v20.1.0-rc1 -m "20.1.0-rc1"
+git tag -a v21.2.0-rc1 -m "21.2.0-rc1"
 
 git checkout master
 git branch -d rc1
 git tag
 
 # share tags
-git push origin v20.1.0
+git push origin v21.2.0
 
 # fetch
 git fetch origin --tags
 
 # checkout tags
-git checkout v20.1.0-rc1
+git checkout v21.2.0-rc1
 git checkout -b rc1
 
 # delete
-git tag -d v20.1.0-rc1
+git tag -d v21.2.0-rc1
 git tag --list
 ```
 
