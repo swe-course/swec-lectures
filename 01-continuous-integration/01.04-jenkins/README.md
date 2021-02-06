@@ -21,7 +21,7 @@
   ```
   and restart Jenkins
   ```
-  service jenkins restart
+  sudo service jenkins restart
   ```
 * Create access token
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-13.png)
