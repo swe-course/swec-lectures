@@ -2,7 +2,7 @@
 ## SonarQube
 * Up SonarQube instance
   ```
-  tln up sonarqube
+  tln install sonarqube -- --db-root-pass "password" --db-pass "password"
   ```
 * Open page in browser **http://\<host-ip-address\>:9000**
 * Login using credentials user/pass **admin/admin**
