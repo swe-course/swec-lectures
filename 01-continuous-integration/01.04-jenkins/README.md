@@ -27,7 +27,7 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-13.png)
 * Install additional plugins: '**GitHub Pull Request Builder**', '**SonarQube Scanner for Jenkins**', '**Pipeline Utility Steps**', '**HTTP Request Plugin**', '**Pipeline Maven Integration Plugin**'
   ```
-  tln install-plugins jenkins --token <your-token> --plugins "ghprb sonar pipeline-utility-steps http_request pipeline-maven"
+  tln install-plugins jenkins -- --token 113bee77871fcba5136be3889f5c15814f --plugins "ghprb sonar pipeline-utility-steps http_request pipeline-maven" --port 8080
   ```
 ### Configure plugins
 * Create SonarQube access credentials, goto **Credentials/System/Global credentials (unrestricted)/Add Credentials** and use access token for SonarQube
