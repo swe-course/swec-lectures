@@ -247,8 +247,11 @@ git add .
 git commit -m"b2r commit in master"
 
 # rebase
+# replace pick with squash
 git checkout b2r
 git rebase -i master
+
+# exit - :wq
 
 git checkout master
 git merge b2r
