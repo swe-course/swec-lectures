@@ -1,13 +1,14 @@
 ## Jenkins
 ### Install prerequisites
   ```
-  > sudo apt install openjdk-8-jdk
-  > sudo apt install maven
-  > wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-  > sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-  > sudo apt update
-  > sudo apt install jenkins
-  > sudo systemctl start jenkins
+  sudo apt install openjdk-8-jdk -y
+  sudo apt install maven -y
+  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+  sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+  sudo apt update
+  sudo apt install jenkins -y
+  sudo systemctl start jenkins
+  sudo apt install mc -y
   ```
 ### Complete setup
 * Open page in browser **http://\<host-ip-address\>:8080**
