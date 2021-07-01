@@ -30,7 +30,7 @@ ls -la
 # Generate pair of SSH keys, use swec as key name, use empty passphrase
 ssh-keygen -t rsa -b 4096 -C "your_email@domain.com" -f ~/.ssh/sec
 
-# Add SSH config file on local machine, use your remote VM ip address as host-ip-address
+# Add SSH config file (~/.ssh/config) on local machine, use your remote VM ip address as host-ip-address
 # or modify exsting config file
 echo "Host <git-host-ip-address>" > config
 echo "  IdentityFile ~/.ssh/sec" >> config
