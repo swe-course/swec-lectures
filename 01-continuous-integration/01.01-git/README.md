@@ -54,10 +54,10 @@ ssh -T git@<git-host-ip-address>
 su - git
 
 # Create folder for the new git repository
-mkdir /opt/git/swec.git
+mkdir /opt/git/sec.git
 
 # Initialize bare repository
-cd /opt/git/swec.git
+cd /opt/git/sec.git
 git --bare init
 
 ls -la
@@ -77,7 +77,7 @@ cd ~
 mkdir projects && cd projects
 
 # Clone repository
-git clone git@<git-host-ip-address>:/opt/git/swec.git && cd swec
+git clone git@<git-host-ip-address>:/opt/git/sec.git && cd sec
 git config --local user.name "your name"
 git config --local user.email "your email"
 git config --local --list
