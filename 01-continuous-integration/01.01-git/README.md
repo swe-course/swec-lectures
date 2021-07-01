@@ -28,17 +28,18 @@ ls -la
 #!/bin/bash
 
 # Generate pair of SSH keys, use swec as key name, use empty passphrase
-ssh-keygen -t rsa -b 4096 -C "your_email@domain.com" -f ~/.ssh/swec
+ssh-keygen -t rsa -b 4096 -C "your_email@domain.com" -f ~/.ssh/sec
 
 # Add SSH config file on local machine, use your remote VM ip address as host-ip-address
+# 
 echo "Host <git-host-ip-address>" > config
-echo "  IdentityFile ~/.ssh/swec" >> config
+echo "  IdentityFile ~/.ssh/sec" >> config
 chmod 600 ./config
 ls -la
 cat config
 
 # Copy public key to the remote VM
-ssh-copy-id -i ~/.ssh/swec git@<git-host-ip-address>
+ssh-copy-id -i ~/.ssh/sec git@<git-host-ip-address>
 
 # Test SSH connection
 ssh -T git@<git-host-ip-address>
