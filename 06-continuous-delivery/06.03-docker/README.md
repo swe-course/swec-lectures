@@ -16,7 +16,7 @@
     steps: async (tln) => [],
     components: async (tln) => []
   }
-  ``]
+  ```
 * Install necessary components
   ```
   tln install-default@docker && tln install --depends
@@ -25,6 +25,33 @@
   ```
 
 ## Docker
-
+* Check python 2.x
+  ```
+  python --version
+  ```
+* Run docker with Python 2.x
+  ```
+  docker run -it python:2 bash
+  python --version
+  python
+  ```
+* Exit from Python and docker container
+  ```
+  ^d
+  ^d
+  ```
+* Run docker container in detached mode
+  ```
+  docker run -d -p 80:80 nginx
+  ```
+* Check in browser http://<ip>
+* Get list of containers
+  ```
+  docker ps -a
+  ```
+* Get list of images
+  ```
+  docker images
+  ```
 
 ## Docker compose
