@@ -78,6 +78,58 @@
   docker images
   ```
   
+* Run image
+  ```
+  docker run --rm -it -p 80:80 sec:21.10.0
+  ```
+  
+* Run base nginx image using volume
+  ```
+  docker run --rm -it -p 80:80 -v /root/projects/docker-playground:/usr/share/nginx/html nginx
+  ```
+  
   
 
 ## Docker compose
+* Create Dockerfile with next content
+  ```
+  touch docker-compose.yml
+  nano docker-compose.yml
+  ```
+  
+  ```
+version: '3'
+
+services:
+  sonarqube:
+    image: sonarqube:6.7.7-community
+    ports:
+      - 9000:9000
+      - 9002:9002
+    networks:
+      - sonarnet
+    environment:
+      - SONARQUBE_JDBC_URL=jdbc:mysql://sonarqube_db:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false
+      - SONARQUBE_JDBC_USERNAME=sonar
+      - SONARQUBE_JDBC_PASSWORD=password
+    depends_on:
+      - sonarqube_db
+    links:
+      - sonarqube_db
+  sonarqube_db:
+    image: mysql:5.7
+    command: --max_allowed_packet=16777216
+    networks:
+      - sonarnet
+    volumes:
+      - /opt/sonarqube/db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=sonar
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=sonar
+      - MYSQL_PASSWORD=password
+
+networks:
+  sonarnet:
+    driver: bridge
+  ```
