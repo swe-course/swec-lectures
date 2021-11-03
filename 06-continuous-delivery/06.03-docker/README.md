@@ -53,5 +53,30 @@
   ```
   docker images
   ```
+* Create index.html with next content
+  ```
+  touch index.html
+  nano index.html
+  ```
+  
+  ```
+  <html><body><h1>Hi from SEC</h1></body></html>
+  ```
+* Create Dockerfile with next content
+  ```
+  touch Dockerfile
+  nano Dockerfile
+  ```
+  
+  ```
+  FROM nginx
+  COPY ./index.html /usr/share/nginx/html
+  ```
+* Build Dockerfile
+  ```
+  docker build -t sec:21.10.0 .
+  ```
+  
+  
 
 ## Docker compose
