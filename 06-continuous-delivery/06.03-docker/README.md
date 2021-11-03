@@ -75,6 +75,7 @@
 * Build Dockerfile
   ```
   docker build -t sec:21.10.0 .
+  docker images
   ```
   
   
