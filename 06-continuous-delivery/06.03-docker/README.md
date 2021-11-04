@@ -133,3 +133,9 @@
     sonarnet:
       driver: bridge
   ```
+
+* Run cluster
+  ```
+  docker-compose up
+  ```  
+  
