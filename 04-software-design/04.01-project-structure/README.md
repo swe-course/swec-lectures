@@ -31,3 +31,18 @@
   ```
   git add -A && git commit -m "v21.11.0" && git tag v21.11.0
   ```
+  
+* Create repository for whole solution
+  ```
+  cd ..
+  ```
+  ```
+  mkdir saas && cd saas && git init && tln config --terse --depend kubectl-1.22.2 && tln install --depends
+  ```
+  ```
+  git config --local user.name VladyslavKurmaz && git config --local user.email vladislav.kurmaz@gmail.com
+  ```
+  ```
+  git add -A && git commit -m "init structure"
+  ```
+  
