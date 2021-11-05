@@ -45,4 +45,15 @@
   ```
   git add -A && git commit -m "init structure"
   ```
-  
+  ```
+  git remote add frontend ../frontend && git remote add backend ../backend && git remote -v
+  ```
+  ```
+  git subtree add --prefix=frontend/admin frontend v21.10.1
+  ```
+  ```
+  git subtree add --prefix=backend/admin backend v21.11.0
+  ```
+  ```
+  git log --graph --oneline
+  ```
