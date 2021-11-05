@@ -12,6 +12,8 @@
 * Create two projects: one for frontend and one for backend
   ```
   mkdir frontend && cd frontend && git init && npx create-react-app . && tln config --terse --depend node-17.0.0 && tln install --depends
+  ```
+  ```
   git config --local user.name VladyslavKurmaz && git config --local user.email vladislav.kurmaz@gmail.com
   git add -A && git commit -m "v21.10.1" && git tag v21.10.1
   cd ..
