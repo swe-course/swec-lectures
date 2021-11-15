@@ -1,8 +1,6 @@
-## Mono-repo
-* Prepare working directory
-  ```
-  cd ~/projects && mkdir mono-repo && cd mono-repo && git init && tln config --terse
-  ```
+## Prerequisites
+* Install Jenkins
+
 
 ## Multi-repo
 * Prepare working directory
@@ -56,4 +54,12 @@
   ```
   ```
   git log --graph --oneline
+  ```
+
+## Mono-repo
+* Create empty repo mono-repo using your Github account
+* Prepare working directory
+  ```
+  cd ~/projects && git clone <your-mono-repo-url>
+  cd mono-repo
   ```
