@@ -1,8 +1,7 @@
 ## Prerequisites
 * Install Jenkins, Docker
   ```
-  tln install jenkins
-  tln install-default docker
+  tln install java:maven:jenkins && tln install-default docker
   ```
 
 ## Multi-repo
