@@ -1,6 +1,9 @@
 ## Prerequisites
-* Install Jenkins
-
+* Install Jenkins, Docker
+  ```
+  tln install jenkins
+  tln install-default docker
+  ```
 
 ## Multi-repo
 * Prepare working directory
