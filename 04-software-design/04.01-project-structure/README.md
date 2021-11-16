@@ -1,21 +1,21 @@
 ## Prerequisites
-* Install Jenkins, Docker
-  ```
-  tln install java:maven:jenkins && tln install-default docker
-  ```
 * Update system
   ```
   apt-get update && apt-get upgrade -y
   ```
+* Install Jenkins, Docker
+  ```
+  tln install java:maven:jenkins && tln install-default docker
+  ```
 * Create projects' root
   ```
-  mkdir projects
+  mkdir projects && cd projects && tln config --terse
   ```
 
 ## Multi-repo
 * Prepare working directory
   ```
-  cd ~/projects && mkdir multi-repo && cd multi-repo && tln config --terse
+  mkdir multi-repo && cd multi-repo && tln config --terse
   ```
 * Create two projects: one for frontend and one for backend
   ```
@@ -34,7 +34,7 @@
   mkdir backend && cd backend && git init && npm init && tln config --terse --depend node-16.12.0 && tln install --depends
   ```
   ```
-  git config --local user.name VladyslavKurmaz && git config --local user.email vladislav.kurmaz@gmail.com
+  git config --local user.name <your_name> && git config --local user.email <your_email>
   ```
   ```
   git add -A && git commit -m "v21.11.0" && git tag v21.11.0
@@ -48,7 +48,7 @@
   mkdir saas && cd saas && git init && tln config --terse --depend kubectl-1.22.2 && tln install --depends
   ```
   ```
-  git config --local user.name VladyslavKurmaz && git config --local user.email vladislav.kurmaz@gmail.com
+  git config --local user.name <your_name> && git config --local user.email <your_email>
   ```
   ```
   git add -A && git commit -m "init structure"
@@ -73,11 +73,14 @@
   cd ~/projects && git clone <your-mono-repo-url>
   cd mono-repo
   ```
-* Create version file
+  ```
+  git config --local user.name <your_name> && git config --local user.email <your_email>
+  ```
+* Create **version** file
   ```
   echo 21.11.0-dev > version
   ```
-* Create context file
+* Create **.context** file
   ```
   echo ci > .context
   ```
@@ -85,4 +88,37 @@
   ```
   touch .env
   touch .env.template
+  ```
+* Create **.tln** file with next content
+  ```
+  module.exports = {
+    options: async (tln, args) => {},
+    env: async (tln, env) => {
+
+    },
+    dotenvs: async (tln) => [],
+    inherits: async (tln) => [],
+    depends: async (tln) => [],
+    steps: async (tln) => [],
+    components: async (tln) => []
+  }
+  ```
+* Create **Jenkinsfile** file with next content
+  ```
+  node {
+  }
+  ```
+* Create **Jenkinsfile** file with next content
+  ```
+  node {
+  }
+  ```
+* Create **.gitignore** file with next content
+  ```
+  .env
+  .context
+  ```
+* Commit initial configuration
+  ```
+  git add -A && git commit -m "Initial configuration"
   ```
