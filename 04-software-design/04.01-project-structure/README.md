@@ -3,6 +3,14 @@
   ```
   tln install java:maven:jenkins && tln install-default docker
   ```
+* Update system
+  ```
+  apt-get update && apt-get upgrade -y
+  ```
+* Create projects' root
+  ```
+  mkdir projects
+  ```
 
 ## Multi-repo
 * Prepare working directory
@@ -59,9 +67,22 @@
   ```
 
 ## Mono-repo
-* Create empty repo mono-repo using your Github account
+* Create empty repo **mono-repo** using your Github account
 * Prepare working directory
   ```
   cd ~/projects && git clone <your-mono-repo-url>
   cd mono-repo
+  ```
+* Create version file
+  ```
+  echo 21.11.0-dev > version
+  ```
+* Create context file
+  ```
+  echo ci > .context
+  ```
+* Create env files
+  ```
+  touch .env
+  touch .env.template
   ```
