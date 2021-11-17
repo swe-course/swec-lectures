@@ -1,7 +1,11 @@
 ## Prerequisites
+* Create projects root, if it doesn't exist
+  ```
+  cd ~ && mkdir projects && cd projects && tln config --terse
+  ```
 * Prepare working directory
   ```
-  cd ~ && mkdir projects && cd projects && tln config --terse && mkdir docker-playground && cd docker-playground && tln config --terse
+  mkdir docker-playground && cd docker-playground && tln config --terse
   ```
 * Edit .tln.conf file 
   ```
