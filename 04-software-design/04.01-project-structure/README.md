@@ -114,9 +114,11 @@
   ```
 * Add frontend service
   ```
-  tln subtree-add -- --prefix fronend/portal --subtree https://github.com/project-talan/tln-react.git --ref v21.8.0 --squash
+  tln subtree-add -- --prefix frontend/portal --subtree https://github.com/project-talan/tln-react.git --ref v21.8.0 --squash
   git add -A && git commit -m"frontend"
   ```
 * Add backend service
   ```
+  tln subtree-add -- --prefix backend/api --subtree https://github.com/project-talan/tln-nodejs --ref v21.3.0 --squash
+  git add -A && git commit -m"backend"
   ```
