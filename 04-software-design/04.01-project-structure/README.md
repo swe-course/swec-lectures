@@ -112,3 +112,11 @@
   ```
   git add -A && git commit -m "Initial configuration"
   ```
+* Add frontend service
+  ```
+  tln subtree-add -- --prefix fronend/portal --subtree https://github.com/project-talan/tln-react.git --ref v21.8.0
+  git add -A && git commit -m"frontend"
+  ```
+* Add backend service
+  ```
+  ```
