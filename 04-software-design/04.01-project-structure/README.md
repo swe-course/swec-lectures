@@ -107,6 +107,7 @@
   ```
   echo ".env
   secrets
+  .kube.config*
   .context" > .gitignore
   ```
 * Commit initial configuration
