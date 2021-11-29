@@ -100,8 +100,8 @@
   ```
 * Create **Jenkinsfile** file with next content
   ```
-  echo node {
-  } > Jenkinsfile
+  echo "node {
+  }" > Jenkinsfile
   ```
 * Create **.gitignore** file with next content
   ```
