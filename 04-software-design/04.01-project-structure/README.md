@@ -66,7 +66,7 @@
 ## Mono-repo
 * Prepare working directory
   ```
-  mkdir mmono-repo && cd mono-repo && git init && tln config --terse
+  mkdir mono-repo && cd mono-repo && git init && tln config --terse
   ```
   ```
   git config --local user.name <your_name> && git config --local user.email <your_email>
