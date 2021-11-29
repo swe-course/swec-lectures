@@ -122,3 +122,34 @@
   tln subtree-add -- --prefix backend/api --subtree https://github.com/project-talan/tln-nodejs --ref v21.3.0 --squash
   git add -A && git commit -m"backend"
   ```
+* Add configs
+  ```
+  echo "module.exports = {
+    options: async (tln, args) => {},
+    env: async (tln, env) => {
+      env.TLN_UID = [env.TLN_UID, env.TLN_COMPONENT_SRC_ID].join('.');
+
+    },
+    dotenvs: async (tln) => [],
+    inherits: async (tln) => [],
+    depends: async (tln) => [],
+    steps: async (tln) => [],
+    components: async (tln) => []
+  }" > frontend/.tln.conf
+  echo "module.exports = {
+    options: async (tln, args) => {},
+    env: async (tln, env) => {
+      env.TLN_UID = [env.TLN_UID, env.TLN_COMPONENT_SRC_ID].join('.');
+
+    },
+    dotenvs: async (tln) => [],
+    inherits: async (tln) => [],
+    depends: async (tln) => [],
+    steps: async (tln) => [],
+    components: async (tln) => []
+  }" > backend/.tln.conf
+  ```
+
+
+
+
