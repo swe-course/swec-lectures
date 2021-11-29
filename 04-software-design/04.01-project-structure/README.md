@@ -92,7 +92,7 @@
 
     },
     dotenvs: async (tln) => [],
-    inherits: async (tln) => [],
+    inherits: async (tln) => ['git'],
     depends: async (tln) => [],
     steps: async (tln) => [],
     components: async (tln) => []
