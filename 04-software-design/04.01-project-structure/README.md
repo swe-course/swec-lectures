@@ -150,6 +150,16 @@
     components: async (tln) => []
   }" > backend/.tln.conf
   ```
+* Build, tag & push docker images
+  ```
+  tln build
+  ```
+* Create Helm chart
+  ```
+  tln exec -c "helm create app"
+  ```
+
+
 
 
 
