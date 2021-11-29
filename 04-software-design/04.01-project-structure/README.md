@@ -106,6 +106,7 @@
 * Create **.gitignore** file with next content
   ```
   echo ".env
+  secrets
   .context" > .gitignore
   ```
 * Commit initial configuration
