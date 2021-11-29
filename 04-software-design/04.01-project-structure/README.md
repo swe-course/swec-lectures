@@ -1,8 +1,5 @@
 ## Prerequisites
-* Update system
-  ```
-  apt-get update && apt-get upgrade -y
-  ```
+* Install [talan cli](https://github.com/project-talan/tln-cli)
 * Install Jenkins, Docker
   ```
   tln install java:maven:jenkins && tln install-default docker
@@ -67,11 +64,9 @@
   ```
 
 ## Mono-repo
-* Create empty repo **mono-repo** using your Github account
 * Prepare working directory
   ```
-  cd ~/projects && git clone <your-mono-repo-url>
-  cd mono-repo
+  mkdir mmono-repo && cd mono-repo && git init && tln config --terse
   ```
   ```
   git config --local user.name <your_name> && git config --local user.email <your_email>
@@ -89,7 +84,7 @@
   touch .env
   touch .env.template
   ```
-* Create **.tln** file with next content
+* Edit **.tln** (just copy-paste content below)
   ```
   module.exports = {
     options: async (tln, args) => {},
@@ -108,15 +103,10 @@
   node {
   }
   ```
-* Create **Jenkinsfile** file with next content
-  ```
-  node {
-  }
-  ```
 * Create **.gitignore** file with next content
   ```
-  .env
-  .context
+  echo ".env
+  .context" > .gitignore
   ```
 * Commit initial configuration
   ```
