@@ -233,7 +233,7 @@
   echo "module.exports = {
     options: async (tln, args) => {},
     env: async (tln, env) => {
-      env.TLN_UID = [env.TLN_UID, env.TLN_COMPONENT_SRC_ID].join('.');
+      env.TLN_UID = [env.TLN_UID, env.TLN_COMPONENT_SRC_ID, 'portal'].join('.');
 
     },
     dotenvs: async (tln) => [],
@@ -245,7 +245,7 @@
   echo "module.exports = {
     options: async (tln, args) => {},
     env: async (tln, env) => {
-      env.TLN_UID = [env.TLN_UID, env.TLN_COMPONENT_SRC_ID].join('.');
+      env.TLN_UID = [env.TLN_UID, env.TLN_COMPONENT_SRC_ID, 'api'].join('.');
 
     },
     dotenvs: async (tln) => [],
