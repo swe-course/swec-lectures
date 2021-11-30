@@ -86,15 +86,119 @@
   ```
 * Edit **.tln** (just copy-paste content below)
   ```
-  module.exports = {
-    options: async (tln, args) => {},
-    env: async (tln, env) => {
+  echo "const path = require('path');
+  const fs = require('fs');
 
+  module.exports = {
+    options: async (tln, args) => {
+      const devDomain = 'ctimes.cloud';
+      const prodDomain = 'ctimes.cloud';
+
+      let envType = 'dev01';
+      let domain = `${envType}.${devDomain}`;
+      let cluster = 'dev';
+      let namespace = envType;
+      //
+      const context = path.join(__dirname, '.context');
+      if (fs.existsSync(context)) {
+        envType = fs.readFileSync(context, 'utf8').trim();
+
+        // map environment type to the cluster and namespace
+        ({ domain, cluster, namespace } = ({
+          ci:     { domain: `ci.${devDomain}`,    cluster: 'dev',   namespace: 'ci' },
+          dev01:  { domain: `dev01.${devDomain}`, cluster: 'dev',   namespace: 'dev01' },
+          qa01:   { domain: `qa01.${devDomain}`,  cluster: 'dev',   namespace: 'qa01' },
+          uat01:  { domain: `uat01.${devDomain}`, cluster: 'dev',   namespace: 'uat01' },
+          prod:   { domain: prodDomain,           cluster: 'prod',  namespace: 'prod' }
+        })[envType]);
+      }
+      args
+        .prefix('TLN_MONO_REPO')
+        .option('domain', { describe: 'Domain to deploy to', default: domain, type: 'string' })
+        .option('environment', { describe: 'Environment id', default: envType, type: 'string' })
+        .option('cluster', { describe: 'k8s cluster', default: cluster, type: 'string' })
+        .option('namespace', { describe: 'k8s namespace', default: namespace, type: 'string' })
+        .option('kube-config', { describe: 'k8s configuration file', default: `.kube.config.${cluster}`, type: 'string' })
+        .option('registry', { describe: 'Container registry', default: `registry.digitalocean.com/projects-cr`, type: 'string' })
+      ;
     },
-    dotenvs: async (tln) => [],
-    inherits: async (tln) => ['git'],
-    depends: async (tln) => [],
-    steps: async (tln) => [],
+    env: async (tln, env) => {
+      env.TLN_UID = 'cloud.ctimes';
+      env.TLN_VERSION = fs.readFileSync(path.join(__dirname, 'version'), 'utf8').trim();
+      env.KUBECONFIG = path.join(__dirname, env.TLN_MONO_REPO_KUBE_CONFIG);
+
+      env.TLN_DOCKER_REGISTRY = env.TLN_MONO_REPO_REGISTRY;
+      const crToken = path.join(__dirname, 'secrets', 'cr-token');
+      if (fs.existsSync(crToken)) {
+        env.TLN_DOCKER_REGISTRY_TOKEN = fs.readFileSync(crToken, 'utf8').trim();
+      } else {
+        tln.logger.warn('Container registry token was not configured, please see README.md for more details');
+      }
+    },
+    dotenvs: async (tln) => ['.env'],
+    inherits: async (tln) => [],
+    depends: async (tln) => ['kubectl-1.20.2', 'terraform-1.0.11', 'helm-3.7.1'],
+    steps: async (tln) => [
+      {
+        id: 'prereq', builder: async (tln, script) => script.set([`
+  ${tln.call('tln install --depends')}
+
+  ${tln.call('tln install frontend/portal --depends')}
+  ${tln.call('tln init frontend/portal')}
+
+  ${tln.call('tln install   backend/api --depends')}
+  ${tln.call('tln init backend/api')}
+
+  ${tln.call('tln install infr --depends')}
+  `     ])
+      },
+      {
+        id: 'build', builder: async (tln, script) => script.set([`
+  ${tln.call('tln docker-build:docker-tag:docker-push frontend/portal')}
+  ${tln.call('tln docker-build:docker-tag:docker-push backend/api')}
+  `     ])
+      },
+      //--------------------------------------------------------------------------
+      { id: 'create-secrets', filter: 'linux', builder: async (tln, script) => {
+          const crt = path.join(__dirname, 'secrets', 'ctimes.cloud.crt');
+          const key = path.join(__dirname, 'secrets', 'ctimes.cloud.key');    
+          const config = path.join(__dirname, 'secrets', 'config.json');
+
+          const secrets = path.join(__dirname, 'secrets', 'values.yaml');
+
+          script.set([`
+  echo "tlsCertificate: |" > ${secrets} && cat ${crt} | sed 's/^/  /' >> ${secrets} && \\
+  echo "tlsKey: |" >> ${secrets} && cat ${key} | sed 's/^/  /' >> ${secrets} && \\
+  echo "dockerSecret: |" >> ${secrets} && cat ${config} | sed 's/^/  /' >> ${secrets}
+          `]);
+        }
+      },
+      {
+        id: 'status', builder: async (tln, script) => {
+          script.set([`
+  kubectl get all -n ${script.env.TLN_MONO_REPO_NAMESPACE}
+          `]);
+        }
+      },
+      {
+        id: 'deploy', builder: async (tln, script) => {
+          script.set([`
+  helm upgrade --install mono-repo-${script.env.TLN_MONO_REPO_NAMESPACE} ${path.join(__dirname, 'app')} \\
+  --set domain=${script.env.TLN_MONO_REPO_DOMAIN} \\
+  --set namespace=${script.env.TLN_MONO_REPO_NAMESPACE} \\
+  --set atlsNodeVersion=${script.env.TLN_VERSION} \\
+  --set registry.auth="${script.env.TLN_DOCKER_REGISTRY_TOKEN}"
+          `]);
+        }
+      },
+      {
+        id: 'undeploy', builder: async (tln, script) => {
+          script.set([`
+  helm uninstall mono-repo-${script.env.TLN_MONO_REPO_NAMESPACE}
+          `]);
+        }
+      }
+    ],
     components: async (tln) => []
   }
   ```
