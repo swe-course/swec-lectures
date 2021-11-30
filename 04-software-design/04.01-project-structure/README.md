@@ -136,7 +136,7 @@
       }
     },
     dotenvs: async (tln) => ['.env'],
-    inherits: async (tln) => [],
+    inherits: async (tln) => ['git'],
     depends: async (tln) => ['kubectl-1.20.2', 'terraform-1.0.11', 'helm-3.7.1'],
     steps: async (tln) => [
       {
