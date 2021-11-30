@@ -405,4 +405,11 @@
   ```
   tln undeploy
   ```
-  
+* Install ingress
+  ```
+  tln nginx-ingress-install@k8s --dry-run
+  ```
+* Check ingress status
+  ```
+  tln nginx-ingress-status@k8s
+  ```
