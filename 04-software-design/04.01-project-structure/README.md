@@ -84,9 +84,9 @@
   touch .env
   touch .env.template
   ```
-* Update **.tln.conf**
+* Update **.tln.conf** (copy & paste content below)
   ```
-  echo "const path = require('path');
+  const path = require('path');
   const fs = require('fs');
 
   module.exports = {
@@ -200,7 +200,7 @@
       }
     ],
     components: async (tln) => []
-  }"
+  }
   ```
 * Create **Jenkinsfile** file with next content
   ```
