@@ -383,7 +383,7 @@
   tln undeploy
   ```
   
-```  
+  ```  
   apiVersion: v1
   clusters:
   - cluster:
@@ -402,3 +402,4 @@
   - name: do-nyc1-sec-admin
     user:
       token: 440956bc51a2f1bbdbbe9a550a295ac935e61c0f017bc8edc6b9390838974b00
+  ```
