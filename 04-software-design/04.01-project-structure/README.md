@@ -371,6 +371,29 @@
   ---
     {{- end }}
   {{- end }}' > app/templates/service.yaml
+  
+  echo '{{- range .Values.routes }}
+  apiVersion: networking.k8s.io/v1beta1
+  kind: Ingress
+  metadata:
+    name: mono-repo-ingress-{{ .suffix }}
+    namespace: {{ $.Values.namespace }}
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+      nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: {{ .rewrite }}
+  spec:
+    rules:
+    - host: "{{ $.Values.domain }}"
+      http:
+        paths:
+        - backend:
+            serviceName: {{ .backend }}
+            servicePort: 80
+          path: {{ .path }}
+  ---
+  {{- end }}' > app/templates/ingress.yaml
   ```
 * Deploy, get status & undeploy application
   ```
