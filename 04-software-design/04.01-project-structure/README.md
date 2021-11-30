@@ -297,9 +297,74 @@
       rewrite: "/api/$2"
       backend: "api"
       path: "/api(/|$)(.*)"' > app/values.yaml
-  echo "" > app/templates/_helpers.tpl
-  echo "" > app/templates/deployment.yaml
-  echo "" > app/templates/namespace.yaml
-  echo "" > app/templates/secret.yaml
-  echo "" > app/templates/service.yaml
+  echo '{{/* Docker registry configuration */}}
+  {{- define "imagePullSecret" }}
+  {{- with .Values.registry }}
+  {{- printf "{\"auths\":{\"%s\":{\"auth\":\"%s\"}}}" .repository .auth  | b64enc }}
+  {{- end }}
+  {{- end }}' > app/templates/_helpers.tpl
+  
+  echo '{{- range $group, $params:= .Values.deployments }}
+  {{- range $inst, $val:= $params.instances }}
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: {{ $group }}-{{ $inst }}
+    namespace: {{ $.Values.namespace }}
+  spec:
+    replicas: {{ $val.replicas }}
+    selector:
+      matchLabels:
+        component: {{ $group }}.{{ $inst }}
+    template:
+      metadata:
+        labels:
+          component: {{ $group }}.{{ $inst }}
+      spec:
+        restartPolicy: Always
+        imagePullSecrets:
+        - name: docker-registry-key
+        containers:
+        - name: {{ $inst }}
+          image: {{ $.Values.registry.repository }}/{{ $.Values.imagePrefix }}.{{ $group }}.{{ $inst }}:{{ $.Values.monoRepoVersion }}
+          imagePullPolicy: Always
+          ports:
+          - name: http
+            containerPort: {{ $val.port }}
+  ---
+    {{- end }}
+  {{- end }}' > app/templates/deployment.yaml
+  
+  echo 'kind: Namespace
+  apiVersion: v1
+  metadata:
+    name: {{ .Values.namespace }}' > app/templates/namespace.yaml
+    
+  echo 'apiVersion: v1
+  kind: Secret
+  metadata:
+    name: docker-registry-key
+    namespace: {{ $.Values.namespace }}
+  type: kubernetes.io/dockerconfigjson
+  data:
+    .dockerconfigjson: {{ template "imagePullSecret" . }}' > app/templates/secret.yaml
+    
+  echo '{{- range $group, $params:= .Values.deployments }}
+  {{- range $inst, $val:= $params.instances }}
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: {{ $inst }}
+    namespace: {{ $.Values.namespace }}
+  spec:
+    selector:
+      component: {{ $group }}.{{ $inst }}
+    ports:
+      - protocol: TCP
+        port: 80
+        targetPort: {{ $val.port }}
+        name: http
+  ---
+    {{- end }}
+  {{- end }}' > app/templates/service.yaml
   ```
