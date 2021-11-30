@@ -368,3 +368,13 @@
     {{- end }}
   {{- end }}' > app/templates/service.yaml
   ```
+* Deploy, get status & undeploy application
+  ```
+  tln deploy
+  ```
+  ```
+  tln status
+  ```
+  ```
+  tln undeploy
+  ```
