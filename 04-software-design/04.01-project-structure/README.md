@@ -255,6 +255,10 @@
     components: async (tln) => []
   }" > backend/.tln.conf
   ```
+* Install dependencies
+  ```
+  tln prereq
+  ```
 * Build, tag & push docker images
   ```
   tln build
