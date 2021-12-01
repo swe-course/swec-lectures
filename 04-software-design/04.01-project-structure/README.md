@@ -413,3 +413,8 @@
   ```
   tln nginx-ingress-status@k8s
   ```
+* Inject cloud agnistic repo
+  ```
+  tln subtree-add -- --prefix backend/api --subtree gitlab@gitlab.customertimes.com:enterprise-technology/accel-clouds.git --ref v21.11.0
+  ```
+  
