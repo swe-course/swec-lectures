@@ -48,7 +48,7 @@
   ```
   docker run -d -p 80:80 nginx
   ```
-* Check in browser http://<ip>
+* Check in browser http://<host_ip_address>
 * Get list of containers
   ```
   docker ps -a
