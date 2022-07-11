@@ -21,6 +21,10 @@ mkdir git
 # Change folder owner
 chown git:git git
 ls -la
+
+# Validate user
+su - git
+
 ```
 ### (2) Generate SSH key to be able to access git server in easy and secure way
 #### Switch to your local machine
