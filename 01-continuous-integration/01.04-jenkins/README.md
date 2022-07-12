@@ -1,14 +1,20 @@
 ## Jenkins
 ### Install prerequisites
   ```
-  sudo apt install openjdk-8-jdk -y
-  sudo apt install maven -y
-  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-  sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-  sudo apt update
-  sudo apt install jenkins -y
-  sudo systemctl start jenkins
-  sudo apt install mc -y
+  sudo apt-get update && sudo apt-get upgrade -y &&
+  sudo apt install openjdk-8-jdk -y &&
+  sudo apt install maven -y &&
+  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add - &&
+  sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' &&
+  sudo apt update &&
+  sudo apt install jenkins -y &&
+  sudo systemctl start jenkins &&
+  sudo apt install mc -y &&
+  curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh &&
+  sudo bash nodesource_setup.sh &&
+  sudo apt-get install nodejs -y && node -v &&
+  npm i -g tln-cli@1.59.0
+  
   ```
 ### Complete setup
 * Open page in browser **http://\<host-ip-address\>:8080**
@@ -28,7 +34,7 @@
   ![](https://github.com/swe-course/swec-lectures/raw/master/imgs/jenkins-13.png)
 * Install additional plugins: '**GitHub Pull Request Builder**', '**SonarQube Scanner for Jenkins**', '**Pipeline Utility Steps**', '**HTTP Request Plugin**', '**Pipeline Maven Integration Plugin**'
   ```
-  tln install-plugins jenkins -- --token 113bee77871fcba5136be3889f5c15814f --plugins "ghprb sonar pipeline-utility-steps http_request pipeline-maven" --port 8080
+  tln install-plugins jenkins -- --token <admin-access> --plugins "ghprb sonar pipeline-utility-steps http_request pipeline-maven" --port 8080
   ```
 ### Configure plugins
 * Create SonarQube access credentials, goto **Manage Jenkins/Manage credentials/Jenkins/Global credentials (unrestricted)/Add Credentials** and use access token for SonarQube
