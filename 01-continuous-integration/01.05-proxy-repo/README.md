@@ -33,5 +33,9 @@ tln subtree-add -- --prefix services/service2 --subtree ../service2 --ref v22.7.
 ```
 tln subtree-ls
 ```
+#### Create project.io release
+```
+mkdir infr && touch infr/backend.tf && git add . && git commit -m"v22.8.0" && git tag -a v22.8.0 -m "io.project:22.8.0"
+```
 
 
