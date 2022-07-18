@@ -45,7 +45,7 @@ cd ../service1 && touch version && git add . && git commit -m"v22.8.0" && git ta
 
 ### Pull new service1 version
 ```
-cd ../project.io && tln subtree-pull -- --prefix services/service1 --ref v22.8.0 --squash && git commit -m"v22.8.1" && git tag -a v22.8.1 -m "io.project:22.8.1"
+cd ../project.io && tln subtree-pull -- --prefix services/service1 --ref v22.8.0 --squash && git add . && git commit -m"v22.8.1" && git tag -a v22.8.1 -m "io.project:22.8.1"
 ```
 ```
 tln subtree-ls
