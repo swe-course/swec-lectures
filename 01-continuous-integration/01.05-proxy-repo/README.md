@@ -13,7 +13,7 @@ cd service1 && git config --local user.name "user" && git config --local user.em
 cd ../service2 && git config --local user.name "user" && git config --local user.email "user@email.com" && touch README.md && git add . && git commit -m"v22.7.0" && git tag -a v22.7.0 -m "io.project.service2:22.7.0"
 ```
 
-### Configure proxy repo 
+### Configure proxy repo
 ```
 cd .. && git init project.io && cd project.io && git config --local user.name "user" && git config --local user.email "user@email.com" && touch README.md && git add . && git commit -m"Initial structure"
 ```
@@ -36,6 +36,11 @@ tln subtree-ls
 #### Create project.io release
 ```
 mkdir infr && touch infr/backend.tf && git add . && git commit -m"v22.8.0" && git tag -a v22.8.0 -m "io.project:22.8.0"
+```
+
+### Pull new service 1 version
+```
+cd ../service1 && touch version && git add . && git commit -m"v22.8.0" && git tag -a v22.8.0 -m "io.project.service1:22.8.0"
 ```
 
 
