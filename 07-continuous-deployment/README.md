@@ -31,6 +31,8 @@
   TF_VAR_env_name=ci
   TF_VAR_tenant_name=petramco
   ```
+#### Change TLN_INFRASTRUCTURE_INSTANCE value from 'dev' to 'your initials' were used for TF_VAR_ii_name (ln. 30)
+
 ### Go to do folder
 #### Install components necessary components
   ```
@@ -53,4 +55,20 @@
 ### Construct Infrastructure Instance
   ```
   tln construct ii/do
+  ```
+### Run shell
+  ```
+  tln shell ii/do
+  ```
+### Connect to the k8s cluster
+  ```
+  kubectl get namespaces && kubectl get pods --all-namespaces
+  ```
+### Exit shell
+  ```
+  ctrl + d
+  ```
+### Deconstruct Infrastructure Instance
+  ```
+  tln deconstruct ii/do
   ```
