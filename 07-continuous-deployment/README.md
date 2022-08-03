@@ -15,14 +15,17 @@
   ```
   mc  
   ```
-### Go to saas-skeleton folder, check repository structure
+### Go to 'saas-skeleton' folder, check repository structure
+  ```
+  cd saas-skeleton
+  ```
 
-### Go to ii folder
-#### Install components necessary components
+### Go to 'ii' folder
+  * Install components necessary components
   ```
   tln install --depends
   ```
-#### Prepare .env file and update env variables
+  * Prepare .env file and update env variables
   ```
   cp .env.template .env  
   ```
@@ -32,14 +35,14 @@
   TF_VAR_env_name=ci
   TF_VAR_tenant_name=petramco
   ```
-#### Change TLN_INFRASTRUCTURE_INSTANCE value from 'dev' to 'your initials' were used for TF_VAR_ii_name (ln. 30)
+  * Change TLN_INFRASTRUCTURE_INSTANCE value from 'dev' to 'your initials' were used for TF_VAR_ii_name (ln. 30)
 
-### Go to do folder
-#### Install components necessary components
+### Go to 'do' folder
+  * Install components necessary components
   ```
   tln install --depends
   ```
-#### Prepare .env file and update env variables
+  * Prepare .env file and update env variables
   ```
   cp .env.template .env  
   ```
@@ -53,23 +56,26 @@
   TF_VAR_do_k8s_nodes_size=s-2vcpu-2gb
   ```
 ### Go to repository home
-### Construct Infrastructure Instance
+  ```
+  cd ../..
+  ```
+  * Construct Infrastructure Instance
   ```
   tln construct ii/do
   ```
-### Run shell
+  * Run shell
   ```
   tln shell ii/do
   ```
-### Connect to the k8s cluster
+  * Connect to the k8s cluster
   ```
   kubectl get namespaces && kubectl get pods --all-namespaces
   ```
-### Exit shell
+  * Exit shell
   ```
   ctrl + d
   ```
-### Deconstruct Infrastructure Instance
+  * Deconstruct Infrastructure Instance
   ```
   tln deconstruct ii/do
   ```
