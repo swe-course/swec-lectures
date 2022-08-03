@@ -1,4 +1,5 @@
-## SaaS skeleton infrastructure & deplo
+## SaaS skeleton infrastructure & deployment
+### Login to your dev box
 ### Install prerequisites
   ```
   sudo apt-get update && sudo apt-get upgrade -y &&
